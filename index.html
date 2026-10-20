@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VidGrab — a fast, mobile-first video download utility for content you are authorized to download.">
+  <title>VidGrab — Video Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#"><span class="brand-dot">V</span> VidGrab</a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <button class="theme" id="themeBtn" aria-label="Toggle theme">☾</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="pill">⚡ Fast • Simple • Mobile friendly</div>
+  <h1>Download your <span>favorite videos</span><br>in one place.</h1>
+  <p class="sub">Paste a video URL you are authorized to download. VidGrab detects the platform and shows available options.</p>
+
+  <div class="downloader">
+    <div class="input-row">
+      <input id="url" type="url" placeholder="Paste YouTube, Shorts, Instagram or Facebook URL…" autocomplete="off">
+      <button id="pasteBtn" class="ghost">Paste</button>
+      <button id="fetchBtn" class="primary">Get video</button>
+    </div>
+    <div class="platforms">
+      <span>Supported UI</span>
+      <b>▶ YouTube</b><b>Shorts</b><b>◎ Instagram</b><b>f Facebook</b>
+    </div>
+    <div id="result" class="result hidden"></div>
+  </div>
+
+  <p class="notice">Only download content you own or have permission to download. Platform terms and copyright rules apply.</p>
+</section>
+
+<section class="stats">
+  <div><strong>4</strong><span>platform types</span></div>
+  <div><strong>100%</strong><span>responsive UI</span></div>
+  <div><strong>0</strong><span>account required for demo</span></div>
+</section>
+
+<section id="how" class="section">
+  <div class="section-head"><span class="eyebrow">HOW IT WORKS</span><h2>Three simple steps</h2></div>
+  <div class="cards">
+    <article><div class="icon">01</div><h3>Paste URL</h3><p>Copy a supported video URL and paste it into the box above.</p></article>
+    <article><div class="icon">02</div><h3>Detect</h3><p>VidGrab identifies the platform and prepares the available authorized options.</p></article>
+    <article><div class="icon">03</div><h3>Download</h3><p>Choose an available format and download the content you are allowed to use.</p></article>
+  </div>
+</section>
+
+<section class="ad-box"><span>ADVERTISEMENT</span></section>
+
+<section id="faq" class="section faq">
+  <div class="section-head"><span class="eyebrow">FAQ</span><h2>Frequently asked questions</h2></div>
+  <details><summary>Is VidGrab free?</summary><p>The MVP interface is free to use. Monetization can be added later with compliant advertising and optional premium features.</p></details>
+  <details><summary>Which platforms are supported?</summary><p>The interface is designed for YouTube, YouTube Shorts, Instagram and Facebook URLs. Actual downloading requires a backend integration that follows each platform's rules.</p></details>
+  <details><summary>Can I download any video?</summary><p>No. Download only content you own or have permission to download, and follow the applicable platform terms and copyright law.</p></details>
+</section>
+</main>
+
+<footer>
+  <div><a class="brand" href="#"><span class="brand-dot">V</span> VidGrab</a><p>Fast tools for creators and their own content.</p></div>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">DMCA</a><a href="#">Contact</a></div>
+  <small>© 2026 VidGrab. All rights reserved.</small>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
