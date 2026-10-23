@@ -12,14 +12,45 @@ function detectPlatform(value){
   return null;
 }
 
-fetchBtn.addEventListener("click",()=>{
-  const value=urlInput.value.trim();
-  if(!value){show("Paste a video URL first.","No URL entered");return}
-  let platform=detectPlatform(value);
-  if(!platform){show("Please enter a valid YouTube, Shorts, Instagram or Facebook URL.","Unsupported URL");return}
-  show(`Detected ${platform}. The production backend will verify whether the requested content can be downloaded legally and according to the platform's rules.`, "Ready for backend");
+fetchBtn.addEventListener("click", async () => {
+const value = urlInput.value.trim();
+
+if (!value) {
+show("Please paste a video URL first.", "No URL entered");
+return;
+}
+
+const platform = detectPlatform(value);
+
+if (!platform) {
+show("Please enter a valid YouTube, Instagram or Facebook URL.", "Unsupported URL");
+return;
+}
+
+show("Connecting to VidGrab server...", "Please wait");
+
+try {
+const response = await fetch("https://vidgrab-backend-ez8b.onrender.com/api/download", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({ url: value })
 });
 
+const data = await response.json();
+
+if (!response.ok) {
+  show(data.error || data.message || "The server could not process this URL.", "Request failed");
+  return;
+}
+
+show(data.message || "Server responded successfully.", "VidGrab response");
+
+} catch (error) {
+show("Could not connect to the server. Please try again.", "Connection error");
+}
+});
 function show(msg,title){
   result.classList.remove("hidden");
   result.innerHTML=`<h3>${title}</h3><p>${msg}</p><span class="tag">Demo UI • Backend integration required</span>`;
