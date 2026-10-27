@@ -30,7 +30,7 @@ return;
 show("Connecting to VidGrab server...", "Please wait");
 
 try {
-const response = await fetch("https://vidgrab-backend-ez8b.onrender.com/api/download", {
+const response = await fetch("https://vidgrab-backend-ez8b.onrender.com/api/detect", {
 method: "POST",
 headers: {
 "Content-Type": "application/json"
